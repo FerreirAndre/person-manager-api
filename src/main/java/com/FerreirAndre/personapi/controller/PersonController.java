@@ -26,7 +26,6 @@ public class PersonController {
                 this._personService = _personService;
         }
 
-        @CrossOrigin(origins = "http://localhost:3000")
         @PostMapping
         @ResponseStatus(HttpStatus.CREATED)
         public Long createPerson(@RequestBody @Valid PersonDTO personDto) {
@@ -34,7 +33,6 @@ public class PersonController {
                 return personDto.getId();
         }
 
-        @CrossOrigin(origins = "http://localhost:3000")
         @GetMapping
         public List<Person> getAllPerson() {
                 return _personService.getAllPerson();
